@@ -49,7 +49,15 @@ public class JobServiceImpl implements JobService {
             if (!repo.existsById(id)) {
                 return false;
             }
-            repo.save(job);
+
+            Job existingJob = repo.findById(id).orElseThrow();
+
+            existingJob.setTitle(job.getTitle());
+            existingJob.setDescription(job.getDescription());
+            existingJob.setMinSalary(job.getMinSalary());
+            existingJob.setMaxSalary(job.getMaxSalary());
+            existingJob.setLocation(job.getLocation());
+            repo.save(existingJob);
             return true;
         } catch (Exception e) {
             return false;
