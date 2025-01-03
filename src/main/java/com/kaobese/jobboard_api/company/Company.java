@@ -1,5 +1,6 @@
 package com.kaobese.jobboard_api.company;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kaobese.jobboard_api.job.Job;
 import com.kaobese.jobboard_api.reviews.Review;
 import jakarta.persistence.*;
@@ -14,8 +15,10 @@ public class Company {
     private String name;
     private String description;
 
-    @OneToMany
+    @JsonIgnore
+    @OneToMany(mappedBy = "company")
     private List<Job> jobs;
+
 
     @OneToMany
     private List<Review> reviews;
