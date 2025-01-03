@@ -1,9 +1,8 @@
 package com.kaobese.jobboard_api.job;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.kaobese.jobboard_api.company.Company;
+import jakarta.persistence.*;
 
 @Entity
 public class Job {
@@ -16,7 +15,19 @@ public class Job {
     private int maxSalary;
     private String location;
 
+
+    @ManyToOne
+    private Company company;
+
     public Job() {
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Job(Long id, String title, String description, int minSalary, int maxSalary, String location) {
