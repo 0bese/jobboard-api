@@ -1,5 +1,6 @@
 package com.kaobese.jobboard_api.job;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kaobese.jobboard_api.company.Company;
 import jakarta.persistence.*;
@@ -15,7 +16,7 @@ public class Job {
     private int maxSalary;
     private String location;
 
-
+    @JsonBackReference
     @ManyToOne
     private Company company;
 

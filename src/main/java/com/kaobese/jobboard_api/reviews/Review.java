@@ -1,5 +1,6 @@
 package com.kaobese.jobboard_api.reviews;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.kaobese.jobboard_api.company.Company;
 import jakarta.persistence.*;
 
@@ -12,6 +13,7 @@ public class Review {
     private String description;
     private double rating;
 
+    @JsonBackReference
     @ManyToOne
     Company company;
 
