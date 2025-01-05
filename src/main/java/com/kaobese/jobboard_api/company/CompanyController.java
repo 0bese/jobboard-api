@@ -54,9 +54,9 @@ public class CompanyController {
     }
 }
 /*
-* POST /companies/{companyID}/reviews
-* GET /companies/{companyID}/reviews
-* GET /companies/{companyID}/reviews/{reviewID}
-* PUT /companies/{companyID}/reviews/{reviewID}
-* DELETE /companies/{companyID}/reviews/{reviewID}
+* POST /companies/{companyID}
+* GET /companies/{companyID}
+* GET /companies/{companyID}
+* PUT /companies/{companyID}
+* DELETE /companies/{companyID}
 */
