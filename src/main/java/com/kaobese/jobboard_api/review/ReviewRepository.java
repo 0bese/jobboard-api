@@ -1,4 +1,4 @@
-package com.kaobese.jobboard_api.reviews;
+package com.kaobese.jobboard_api.review;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

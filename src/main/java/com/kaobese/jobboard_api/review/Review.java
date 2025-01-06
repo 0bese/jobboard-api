@@ -1,4 +1,4 @@
-package com.kaobese.jobboard_api.reviews;
+package com.kaobese.jobboard_api.review;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.kaobese.jobboard_api.company.Company;
