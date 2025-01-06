@@ -1,9 +1,8 @@
 package com.kaobese.jobboard_api.company;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.kaobese.jobboard_api.job.Job;
-import com.kaobese.jobboard_api.reviews.Review;
+import com.kaobese.jobboard_api.review.Review;
 import jakarta.persistence.*;
 
 import java.util.List;

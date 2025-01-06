@@ -9,7 +9,7 @@ import java.util.List;
 @RestController
 public class JobController {
 
-    private JobService jobService;
+    private final JobService jobService;
 
     public JobController(JobService jobService) {
         this.jobService = jobService;
@@ -50,4 +50,6 @@ public class JobController {
             return new ResponseEntity<>("Job successfully updated", HttpStatus.OK);
         return new ResponseEntity<>("Something went wrong!!", HttpStatus.NOT_FOUND);
     }
+
+
 }
