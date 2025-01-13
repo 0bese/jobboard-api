@@ -5,11 +5,11 @@ services:
     environment:
       POSTGRES_USER: kaobese
       POSTGRES_PASSWORD: secret
-      PGDATA: /data/postgres
+      PGDATA: /data/postgrespwd
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - postgres_network
     restart: unless-stopped
@@ -18,8 +18,8 @@ services:
     image: dpage/pgadmin4:latest
     container_name: pgadmin_container
     environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: "False"
     volumes:
       - pgadmin:/var/lib/pgadmin
@@ -35,3 +35,4 @@ volumes:
 
 networks:
   postgres_network:
+    driver: bridge
