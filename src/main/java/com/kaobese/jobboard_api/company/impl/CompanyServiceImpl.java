@@ -29,8 +29,8 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public boolean createCompany(Company company) {
         try{
-        companyRepo.save(company);
-        return true;
+            companyRepo.save(company);
+            return true;
         } catch (Exception e) {
             return false;
         }
